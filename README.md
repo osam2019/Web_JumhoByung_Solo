@@ -23,7 +23,7 @@ npm init
 npm run server
 ```
 
-[Make Us 소개 PPT 파일](https://www.dropbox.com/s/mgqqharvvn4h1vi/Makeus%20%EC%86%8C%EA%B0%9C.pptx?dl=0)
+[Make Us 소개 PPT 파일](dd)
 
 ## 파일 정보 및 목록 (File Manifest)
 
