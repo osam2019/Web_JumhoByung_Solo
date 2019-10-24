@@ -23,7 +23,7 @@ npm init
 npm run server
 ```
 
-[Make Us 소개 PPT 파일](dd)
+[ 소개 PPT 파일](dd)
 
 ## 파일 정보 및 목록 (File Manifest)
 
