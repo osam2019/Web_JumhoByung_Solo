@@ -13,6 +13,7 @@ COMMENT ON SCHEMA public IS 'standard public schema';
 const dotenv = require('dotenv');
 dotenv.config();
 
+import {mockedWorkTypes, mockedUnits} from "./Util/mockedData"
 import http from 'http';
 
 import cors from 'cors';
@@ -83,7 +84,9 @@ const isTest = !!process.env.TEST_DATABASE;
 const isProduction = !!process.env.DATABASE_URL;
 const port = process.env.PORT || 80;
 
-sequelize.sync({ force: isTest || isProduction }).then(async () => {
+sequelize
+	.sync({ force: isTest || isProduction })
+	.then(async () => {
   if (isTest || isProduction) {
     createUsersWithMessages(new Date());
   }
@@ -91,7 +94,6 @@ sequelize.sync({ force: isTest || isProduction }).then(async () => {
     console.log(`Apollo Server on http://localhost:${port}/graphql`);
   });
 });
-
 
 sequelize
     .sync({ force: true })
@@ -206,79 +208,9 @@ const createUsersWithMessages = async date => {
     // 		dep5: '-',
     // 		dep6: '-'
     // 	})
-
-    // await models.Worktype
-    // 	.create({
-    // 	 	typename: '주간근무',
-    // worktime: '0830-1730',
-    // isInTroopMorning: true,
-    // isInTroopEvening: true,
-    // affectMorningAttend: false,
-    // affectEveningAttend: false,
-    // 	})
-
-    await models.Worktype.create({
-        typename: '야간근무',
-        worktime: '1730-07300',
-        isInTroopMorning: true,
-        outTroopExpMorning: '',
-        isInTroopEvening: true,
-        outTroopExpEvening: '',
-        affectMorningAttend: true,
-        absenceExpMorning: '야간근무',
-        affectEveningAttend: true,
-        absenceExpEvening: '야간근무'
-    });
-
-    await models.Worktype.create({
-        typename: '주간근무',
-        worktime: '0830-1730',
-        isInTroopMorning: true,
-        outTroopExpMorning: '',
-        isInTroopEvening: true,
-        outTroopExpEvening: '',
-        affectMorningAttend: false,
-        absenceExpMorning: '',
-        affectEveningAttend: false,
-        absenceExpEvening: ''
-    });
 	
-	await models.Worktype.create({
-        typename: '비번',
-        worktime: '-',
-        isInTroopMorning: true,
-        outTroopExpMorning: '',
-        isInTroopEvening: true,
-        outTroopExpEvening: '',
-        affectMorningAttend: false,
-        absenceExpMorning: '',
-        affectEveningAttend: false,
-        absenceExpEvening: ''
-    });
-	
-	// await models.Worktype.create({
-	// typename: '급양근무',
-	// worktime: '0430-0830',
-	// isInTroopMorning: true,
-	// outTroopExpMorning: '',
-	// isInTroopEvening: true,
-	// outTroopExpEvening: '',
-	// affectMorningAttend: false,
-	// absenceExpMorning: '',
-	// affectEveningAttend: false,
-	// absenceExpEvening: ''
-	// });
-
-    await models.Unit.create({
-        topCategory: '공군',
-        dep0: '교육사령부',
-        dep1: '제3훈련비행단',
-        dep2: '항공작전전대',
-        dep3: '항공작전과',
-        dep4: '-',
-        dep5: '-',
-        dep6: '-'
-    });
+	await models.Worktype.bulkCreate(mockedWorkTypes)
+	await models.Unit.bulkCreate(mockedUnits)
 
     await models.Worktype.findByPk(1).then(worktype => {
         models.Unit.findByPk(1).then(unit => worktype.addUnit(unit));
@@ -292,9 +224,9 @@ const createUsersWithMessages = async date => {
         models.Unit.findByPk(1).then(unit => worktype.addUnit(unit));
     });
 	
-	await models.Worktype.findByPk(4).then(worktype => {
-        models.Unit.findByPk(1).then(unit => worktype.addUnit(unit));
-    });
+	// await models.Worktype.findByPk(4).then(worktype => {
+	// models.Unit.findByPk(1).then(unit => worktype.addUnit(unit));
+	// });
 
     // await models.Worktype
     // .findOrCreate(

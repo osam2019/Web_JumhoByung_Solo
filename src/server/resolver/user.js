@@ -37,7 +37,7 @@ export default {
 				roles
             });
 			console.log(`${username}께서 가입하셨습니다.`)
-            return { token: createToken(user, secret, '3000m') };
+            return { token: createToken(user, secret, '30m') };
         },
         signIn: async (parent, { login, password }, { models, secret }) => {
             const user = await models.User.findByLogin(login);

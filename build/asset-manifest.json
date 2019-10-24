@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a9b1d7e.chunk.css",
+    "main.js": "/static/js/main.e5f19990.chunk.js",
+    "main.js.map": "/static/js/main.e5f19990.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bba687a8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bba687a8.js.map",
+    "static/css/2.85757047.chunk.css": "/static/css/2.85757047.chunk.css",
+    "static/js/2.2e7e3e40.chunk.js": "/static/js/2.2e7e3e40.chunk.js",
+    "static/js/2.2e7e3e40.chunk.js.map": "/static/js/2.2e7e3e40.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6300338d47fcac4601b32ab81cd4db2a.js": "/precache-manifest.6300338d47fcac4601b32ab81cd4db2a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.85757047.chunk.css.map": "/static/css/2.85757047.chunk.css.map",
+    "static/css/main.3a9b1d7e.chunk.css.map": "/static/css/main.3a9b1d7e.chunk.css.map",
+    "static/media/activation.png": "/static/media/activation.0e278843.png",
+    "static/media/employee.png": "/static/media/employee.45c6fa74.png",
+    "static/media/enterprise.png": "/static/media/enterprise.0c4fe4f3.png",
+    "static/media/game-over.png": "/static/media/game-over.9ad7e522.png",
+    "static/media/light.png": "/static/media/light.117aa585.png",
+    "static/media/renewable-energy.png": "/static/media/renewable-energy.f0d350f4.png",
+    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2",
+    "static/media/sunbed.png": "/static/media/sunbed.13fbf8e0.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bba687a8.js",
+    "static/css/2.85757047.chunk.css",
+    "static/js/2.2e7e3e40.chunk.js",
+    "static/css/main.3a9b1d7e.chunk.css",
+    "static/js/main.e5f19990.chunk.js"
+  ]
+}
