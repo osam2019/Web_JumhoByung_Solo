@@ -28,7 +28,7 @@
     "graphql-resolvers": "^0.3.3",
     "graphql-tag": "^2.10.1",
     "heroku": "^7.33.3",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "korean-name-generator": "^1.0.2",
     "lodash.flowright": "^3.5.0",
     "moment-range": "^4.0.2",
